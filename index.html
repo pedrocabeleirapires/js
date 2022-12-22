@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<script>
+    var drink = [];
+</script>
+<html>
+    <style>
+        table, th, td {
+          border:1px solid black;
+        }
+        </style>
+<body>
+
+<button onclick="myFunction()">Add drink</button>
+
+<table id="table">
+            
+    <!-- The Row Number 0 -->
+    <tr>
+        <th>Name</th>
+        <th>Age</th>
+    </tr>
+</table>
+
+<script>
+function myFunction() {
+    let drinkname = prompt('Please enter the name of your drink');
+    let Age = prompt('Age of your drink');
+    drink.push([drinkname,Age]);
+    var table = document.getElementById("table");
+   
+    
+
+    for(var i = drink.length-1; i < drink.length; i++)
+           {
+               // create a new row
+               var newRow = table.insertRow(table.length);
+               for(var j = 0; j <drink[i].length; j++)
+               {
+                   // create a new cell
+                   var cell = newRow.insertCell(j);
+                   
+                   // add value to the cell
+                   cell.innerHTML = drink[i][j];
+               }
+               var cell = newRow.insertCell(j);
+                   
+                   // add value to the cell
+                   cell.innerHTML = '<button onclick="myFunction()">Delete</button>';
+           }
+}
+ 
+
+
+</script>
+
+</body>
+</html>
